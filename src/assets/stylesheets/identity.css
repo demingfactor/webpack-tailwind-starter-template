@@ -1,0 +1,222 @@
+/* Identity.css - Native html elements only, no classes or ids */
+
+html{
+  font-family: 'Montserrat', sans-serif;
+  font-size:  16px;
+  scroll-behavior: smooth;
+}
+body{
+  line-height: 1.5rem;
+}
+strong{
+  font-weight: 700;
+}
+em{
+  font-style: italic;
+}
+h1{
+  font-size: 47.78px;
+  font-weight: 900;
+  line-height: 3rem;
+  margin: 0 0 1.5rem 0;
+}
+h2{
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 3rem;
+  margin: 0 0 1.5rem 0;
+}
+h3{
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 2.25rem;
+  margin: 0 0 1.5rem 0;
+}
+h4{
+  font-size: 27.65px;
+  font-weight: 700;
+  line-height: 2.25rem;
+  margin: 0 0 1.5rem 0;
+}
+h5{
+  font-size: 23.04px;
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin: 0 0 1.5rem 0;
+}
+h6{
+  font-size: 19.2px;
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin: 0 0 1.5rem 0;
+}
+p{
+  max-width: 45rem;
+  margin: 0 0 1.5rem 0;
+}
+
+ol{
+  margin: 0 0 1.5rem 0;
+}
+ul{
+  list-style: none;
+  margin: 0 0 1.5rem 0;
+}
+code{
+  font-family: monospace;
+  font-size: 14px;
+  margin: 0 0 1.5rem 0;
+}
+pre{
+  margin: 0 0 1.5rem 0;
+}
+form{
+  margin: 0 0 1.5rem 0;
+}
+form>input{
+  border: solid 1px grey;
+  padding: 1rem .75rem;
+  margin: 0 0 1.5rem 0;
+}
+form>textarea{
+  border: solid 1px grey;
+  padding: 1rem .75rem;
+  margin: 0 0 1.5rem 0;
+}
+form>button{
+  border: solid 1px grey;
+  padding: .5rem 2rem;
+  color: black;
+}
+form>button:hover{
+  /* border: solid 1px #b8c2cc; */
+  color: white;
+  background-color: #b8c2cc;
+}
+table{
+  margin: 0 0 1.5rem 0;
+}
+th{
+  font-weight: 300;
+}
+a{
+  text-decoration: none;
+  font-weight: 400;
+  color: #03359A;
+}
+
+
+blockquote{
+  font-size: 23.04px;
+  font-weight: 300;
+  line-height: 3rem;
+  padding-left: 1rem;
+  border-left: dotted 1px black;
+  /* font-style: italic; */
+}
+.bg-sf-purple{
+  background-color: #6F59A6;
+}
+.bg-sf-blue{
+  background-color: #0091D5;
+}
+
+/* background */
+.header-banner{
+  background-image: url("header_background/header-image.svg");
+  background-repeat: no-repeat;
+  background-position: 40% center;
+  background-size:cover ;
+}
+/* background icons */
+.icon-carrot{
+  background-image: url("icons/carrot.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-banana{
+  background-image: url("icons/banana.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-apple{
+  background-image: url("icons/apple.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-apple-h{
+  background-image: url("icons/apple_h.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-avacado{
+  background-image: url("icons/avacado.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-avacado-h{
+  background-image: url("icons/avacado_h.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-lemon{
+  background-image: url("icons/lemon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-two-lemons{
+  background-image: url("icons/two_lemons.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-orange{
+  background-image: url("icons/orange.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-two-oranges{
+  background-image: url("icons/two_oranges.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-tomato{
+  background-image: url("icons/tomato.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-two-tomatos{
+  background-image: url("icons/two_tomatos.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.list-disc{
+  list-style: disc;
+}
+
+.bg-left{
+  background-position: left;
+
+}
+ /* custom height */
+
+ .h-240{
+   height:60rem
+ }
+   @media (min-width:992px) {
+   h2{
+     font-size: 54px;
+   }
+ }
