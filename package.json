@@ -22,12 +22,12 @@
     "tailwindcss": "^0.4.1",
     "typeface-montserrat": "0.0.54",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "2.11.2",
     "webpack-merge": "^4.1.2"
   },
   "devDependencies": {
     "file-loader": "^1.1.11",
     "svg-inline-loader": "^0.8.0",
-    "url-loader": "^1.0.1"
+    "url-loader": "^1.0.1",
+    "webpack-dev-server": "^2.11.2"
   }
 }
