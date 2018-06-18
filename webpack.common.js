@@ -84,17 +84,17 @@ module.exports = {
       from: '*.png',
       to: path.resolve(__dirname, 'docs/assets/images/')
     }, {
-      context: 'src/assets/stylesheets/icons',
+      context: 'src/assets/stylesheets',
       from: '*.svg',
-      to: path.resolve(__dirname, 'docs/assets/stylesheets/icons/')
+      to: path.resolve(__dirname, 'docs/assets/stylesheets')
     }, {
-      context: 'src/assets/stylesheets/header_background',
+      context: 'src/assets/stylesheets',
       from: '*.svg',
-      to: path.resolve(__dirname, 'docs/assets/stylesheets/header_background/')
+      to: path.resolve(__dirname, 'docs/assets/stylesheets')
     }]),
     new HtmlWebpackPlugin({
       inject: true,
-      template: './src/index.html',
+      template: './src/template.html',
       minify: isProd && {
         removeComments: true,
         collapseWhitespace: true,
