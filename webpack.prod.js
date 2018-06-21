@@ -8,6 +8,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = Merge(common, {
   mode: "production",
@@ -19,8 +20,7 @@ module.exports = Merge(common, {
     publicPath: './'
   },
   plugins: [
-    // new ExtractTextPlugin('[name].[contenthash:8].css'),
-    // new ExtractTextPlugin("[name].css"),
+    new ExtractTextPlugin('[name].[hash:8].css'),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
