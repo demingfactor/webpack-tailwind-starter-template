@@ -1,7 +1,6 @@
 /* Identity.css - Native html elements only, no classes or ids */
 
 html{
-  font-family: 'Montserrat', sans-serif;
   font-size:  16px;
   scroll-behavior: smooth;
 }
