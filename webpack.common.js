@@ -35,12 +35,6 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'docs'),
-    filename: '[name].[chunkhash:8].js',
-    chunkFilename: '[name].[chunkhash:8].js',
-    publicPath: './'
-  },
   module: {
     rules: [{
         test: /\.(png|jp(e*)g|svg)$/,
@@ -63,7 +57,7 @@ module.exports = {
   plugins: [
     // Clean the 'docs' folder in production
     isProd && new CleanWebpackPlugin(['docs']),
-    new ExtractTextPlugin('[name].[contenthash:8].css'),
+    new ExtractTextPlugin('[name].css'),
     // Scan all the files in the 'src' folder and remove
     // unused class names in production
     isProd && new PurgecssPlugin({
@@ -94,7 +88,7 @@ module.exports = {
     }]),
     new HtmlWebpackPlugin({
       inject: true,
-      template: './src/template.html',
+      template: './src/index.html',
       minify: isProd && {
         removeComments: true,
         collapseWhitespace: true,

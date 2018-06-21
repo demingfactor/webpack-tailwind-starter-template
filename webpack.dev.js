@@ -1,15 +1,25 @@
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const path = require('path');
 
 // Bundles (CSS) to own CSS file rather than embedded in CSS.
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = merge(common, {
+  output: {
+    path: path.resolve(__dirname, 'docs'),
+    filename: '[name].js',
+    chunkFilename: '[name].js',
+    publicPath: './'
+  },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './docs',
     hot: true
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   module: {
     rules: [{
         test: /\.css$/,

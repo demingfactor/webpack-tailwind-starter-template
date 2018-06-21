@@ -11,6 +11,12 @@ const webpack = require('webpack');
 
 module.exports = Merge(common, {
   devtool: 'source-map',
+  output: {
+    path: path.resolve(__dirname, 'docs'),
+    filename: '[name].[chunkhash:8].js',
+    chunkFilename: '[name].[chunkhash:8].js',
+    publicPath: './'
+  },
   plugins: [
     // new ExtractTextPlugin('[name].[contenthash:8].css'),
     // new ExtractTextPlugin("[name].css"),
