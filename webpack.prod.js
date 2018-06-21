@@ -10,6 +10,7 @@ const common = require('./webpack.common.js');
 const webpack = require('webpack');
 
 module.exports = Merge(common, {
+  mode: "production",
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'docs'),
