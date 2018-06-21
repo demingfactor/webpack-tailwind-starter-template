@@ -34,7 +34,7 @@ class TailwindExtractor {
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['./src/index.js'],
   module: {
     rules: [{
         test: /\.(png|jp(e*)g|svg)$/,
