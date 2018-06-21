@@ -1,3 +1,5 @@
+For details on installing from the template or updating the template see TEMPLATE_README.md
+
 # webpack-tailwind-starter-template
 Starter Template includes Tailwind in Webpack.
 
