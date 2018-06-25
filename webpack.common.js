@@ -1,16 +1,7 @@
 const webpack = require('webpack')
 
 // Autogenerates index.js into a index.html with auto script tags
-const HtmlWebpackPlugin = require('html-webpack-plugin') //
-
-// Purges unused CSS (Great for use with a style framework like Tailwind)
-const PurgecssPlugin = require('purgecss-webpack-plugin')
-
-// Wipes docs directory on recompiling, keeping the directory clean.
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-
-// Bundles (CSS) to own CSS file rather than embedded in CSS.
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const UrlLoader = require("url-loader");
 const FileLoader = require("file-loader");
