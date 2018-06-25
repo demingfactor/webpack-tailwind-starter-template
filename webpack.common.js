@@ -55,20 +55,7 @@ module.exports = {
     ]
   },
   plugins: [
-    // Clean the 'docs' folder in production
-    isProd && new CleanWebpackPlugin(['docs']),
     new ExtractTextPlugin('[name].css'),
-    // Scan all the files in the 'src' folder and remove
-    // unused class names in production
-    isProd && new PurgecssPlugin({
-      paths: glob.sync(path.join(__dirname, 'src') + '/**/*'),
-      extractors: [{
-        extractor: TailwindExtractor,
-        // Specify the file extensions to include when scanning for
-        // class names.
-        extensions: ['html', 'js']
-      }]
-    }),
     new CopyWebpackPlugin([{
       context: 'src/assets/stylesheets/',
       from: '*.css',
@@ -102,6 +89,5 @@ module.exports = {
         minifyURLs: true
       }
     }),
-    isProd && new webpack.optimize.UglifyJsPlugin()
   ].filter(Boolean)
 }

@@ -20,7 +20,20 @@ module.exports = Merge(common, {
     publicPath: './'
   },
   plugins: [
+    // Clean the 'docs' folder before each build is run
+    new CleanWebpackPlugin(['docs']),
+    // Scan all the CSS in 'src' folder and remove unused CSS classes from the build
+    new PurgecssPlugin({
+      paths: glob.sync(path.join(__dirname, 'src') + '/**/*'),
+      extractors: [{
+        extractor: TailwindExtractor,
+        // Specify the file extensions to review when scanning for CSS class names.
+        extensions: ['html', 'js']
+      }]
+    }),
     new ExtractTextPlugin('[name].[hash:8].css'),
+    // Covert variable names to short names (aka Uglify) to speed up load times with reduced file size.
+    new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
