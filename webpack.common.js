@@ -39,18 +39,22 @@ module.exports = {
     rules: [{
         test: /\.(png|jp(e*)g|svg)$/,
         use: [{
-          loader: 'url-loader',
+          loader: 'url-loader', // url-loader defaults back to loading with file-loader if size over size limit.
           options: {
-            limit: 8000, // Convert images < 8kb to base64 strings
+            limit: 8000, // Convert files < 8kb to base64 strings
             name: 'assets/images/[hash]-[name].[ext]'
           }
         }]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          'file-loader'
-        ]
+        use: [{
+          loader: 'url-loader', // url-loader defaults back to loading with file-loader if size over size limit.
+          options: {
+            limit: 8000, // Convert files < 8kb to base64 strings
+            name: 'assets/fonts/[name].[ext]'
+          }
+        }]
       }
     ]
   },
@@ -69,9 +73,10 @@ module.exports = {
       from: '*.svg',
       to: path.resolve(__dirname, 'docs/assets/stylesheets')
     }, {
-      context: 'src/assets/stylesheets',
-      from: '*.svg',
-      to: path.resolve(__dirname, 'docs/assets/stylesheets')
+      context: 'src/assets/stylesheets/fonts',
+      from: '*/*',
+      test: /\.(woff|woff2|eot|ttf|otf)$/,
+      to: path.resolve(__dirname, 'docs/assets/stylesheets/fonts')
     }]),
     new HtmlWebpackPlugin({
       inject: true,
