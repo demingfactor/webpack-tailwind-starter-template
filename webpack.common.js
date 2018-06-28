@@ -1,16 +1,48 @@
 const webpack = require('webpack')
 
-// Autogenerates index.js into a index.html with auto script tags
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+//////////////////////////////////////////////////////////////////////
+// 1. ADD LOADERS TO HELP WEBPACK UNDERSTAND THINGS.
+// By defauly Webpack nativley only understands JS.
+// Use Loaders to help webpack understand more filetypes.
+//////////////////////////////////////////////////////////////////////
 
-const UrlLoader = require("url-loader");
-const FileLoader = require("file-loader");
+  // Enable Webpack to read common non-JS files
+  const FileLoader = require("file-loader");
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+  // Enable Webpack to read common non-JS files and make small file into embedded data
+  const UrlLoader = require("url-loader");
 
-const tailwindcss = require('tailwindcss')
-const glob = require('glob')
-const path = require('path')
+//////////////////////////////////////////////////////////////////////
+// 2A. ADD PLUGINS THAT DO CONVERSIONS BETWEEN THINGS
+//////////////////////////////////////////////////////////////////////
+
+  // Autogenerates index.js into a index.html with auto script tags
+  const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+  // Bundles (CSS) to own CSS file rather than embedded in CSS.
+  const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+  const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+//////////////////////////////////////////////////////////////////////
+// 2B. ADD PLUGINS THAT TIDY UP THINGS
+//////////////////////////////////////////////////////////////////////
+
+  // Purges unused CSS (Great for use with a style framework like Tailwind)
+  const PurgecssPlugin = require('purgecss-webpack-plugin')
+
+  // Wipes docs directory on recompiling, keeping the directory clean.
+  const CleanWebpackPlugin = require('clean-webpack-plugin')
+
+//----------------------------------------------------------------------//
+
+//////////////////////////////////////////////////////////////////////
+// 3. Set some constants
+//////////////////////////////////////////////////////////////////////
+
+const tailwindcss = require('tailwindcss');
+const path = require('path');
+const isProd = process.env.NODE_ENV === 'production'
 
 // Custom PurgeCSS extractor for Tailwind that allows special characters in
 // class names.
@@ -22,7 +54,7 @@ class TailwindExtractor {
   }
 }
 
-const isProd = process.env.NODE_ENV === 'production'
+//---------------------  Real code starts here  ------------------------//
 
 module.exports = {
   entry: ['./src/index.js'],
@@ -50,6 +82,16 @@ module.exports = {
     ]
   },
   plugins: [
+    // Clean the 'docs' folder before each build is run
+    isProd && new CleanWebpackPlugin(['docs']),
+    isProd && new PurgecssPlugin({
+      paths: glob.sync(path.join(__dirname, 'src') + '/**/*'),
+      extractors: [{
+        extractor: TailwindExtractor,
+        // File extensions to include when scanning for class names.
+        extensions: ['html', 'js']
+      }]
+    }),
     new ExtractTextPlugin('[name].css'),
     new CopyWebpackPlugin([{
       context: 'src/assets/stylesheets/',
