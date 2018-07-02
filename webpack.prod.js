@@ -5,14 +5,13 @@ const Merge = require('webpack-merge');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 // Purges unused CSS (Great for use with a style framework like Tailwind)
-const PurgecssPlugin = require('purgecss-webpack-plugin')
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 // Wipes docs directory on recompiling, keeping the directory clean.
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // Convert variable names to short names to reduce file size
 // Uglyifying is now on by default for the production mode.
-
 
 const common = require('./webpack.common.js');
 const webpack = require('webpack');

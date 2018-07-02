@@ -17,7 +17,7 @@ const webpack = require('webpack')
 //////////////////////////////////////////////////////////////////////
 
   // Autogenerates index.js into a index.html with auto script tags
-  const HtmlWebpackPlugin = require('html-webpack-plugin')
+  const HtmlWebpackPlugin = require('html-webpack-plugin');
 
   // Bundles (CSS) to own CSS file rather than embedded in CSS.
   const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -29,10 +29,10 @@ const webpack = require('webpack')
 //////////////////////////////////////////////////////////////////////
 
   // Purges unused CSS (Great for use with a style framework like Tailwind)
-  const PurgecssPlugin = require('purgecss-webpack-plugin')
+  const PurgecssPlugin = require('purgecss-webpack-plugin');
 
   // Wipes docs directory on recompiling, keeping the directory clean.
-  const CleanWebpackPlugin = require('clean-webpack-plugin')
+  const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 //----------------------------------------------------------------------//
 
@@ -42,7 +42,7 @@ const webpack = require('webpack')
 
 const tailwindcss = require('tailwindcss');
 const path = require('path');
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production';
 
 // Custom PurgeCSS extractor for Tailwind that allows special characters in
 // class names.
@@ -83,6 +83,7 @@ module.exports = {
   },
   plugins: [
     // Clean the 'docs' folder before each build is run
+    console.log("Running..."),
     isProd && new CleanWebpackPlugin(['docs']),
     isProd && new PurgecssPlugin({
       paths: glob.sync(path.join(__dirname, 'src') + '/**/*'),
