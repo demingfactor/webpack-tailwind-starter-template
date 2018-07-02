@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": "https://github.com/demingfactor/webpack-tailwind-starter-template",
   "scripts": {
     "start": "webpack-serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
