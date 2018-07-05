@@ -34,6 +34,17 @@ To update your repository from the template.
 
 $ git pull template master
 
+## Updating NPM and all the things
+
+If you're running ASDF we've included .tool-versions to make your life easier.
+If 'npm run build' is not running you probably need to update ASDF like so:
+
+    $ asdf plugin-update --all && asdf update && npm i npm
+
+
+
+
+
 
 
 
