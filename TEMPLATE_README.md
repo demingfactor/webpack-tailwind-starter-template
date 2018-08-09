@@ -23,6 +23,14 @@
 5. Install NPM packages
 
     $ npm install
+    
+6. Clone index.html.example for local use
+
+So that your index.html is never updated accidently from a push in the Template.
+We get you to copy the example file.
+If new code is later added in the example file in master you can look in the file and copy enhancements across yourself.
+
+    $ cp src/index.html.example index.html
 
 6. Run Start to start the project in Development mode
 
