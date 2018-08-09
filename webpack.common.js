@@ -57,7 +57,7 @@ class TailwindExtractor {
 //---------------------  Real code starts here  ------------------------//
 
 module.exports = {
-  entry: ['./src/index.js'],
+  entry: ['./src/index.js','./src/styleguide.js'],
   module: {
     rules: [{
         test: /\.(png|jp(e*)g|svg)$/,
@@ -115,6 +115,23 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: './src/index.html',
+      minify: isProd && {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      filename: 'styleguide.html',
+      template: './src/styleguide.html',
       minify: isProd && {
         removeComments: true,
         collapseWhitespace: true,
