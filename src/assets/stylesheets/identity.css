@@ -104,6 +104,10 @@ a{
   color: #03359A;
 }
 
+section{
+  max-width: 40rem;
+  padding: 0 .5rem;
+}
 
 blockquote{
   font-size: 23.04px;
