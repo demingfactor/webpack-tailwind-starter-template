@@ -5,6 +5,16 @@ Starter Template includes Tailwind in Webpack.
 
 ## Development
 
+## If you haven't done this in a while
+
+Check LTS version of Node JS here (https://nodejs.org/en/) and update .tool-versions
+    
+    $ asdf install
+    $ node --version (should return the version matching .tool-versions)
+
+Run npm install to update to latest versions of things    
+
+
 ### First time
 
 $ npm install
