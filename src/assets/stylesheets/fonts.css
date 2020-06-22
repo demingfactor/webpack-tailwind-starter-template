@@ -1,1 +1,72 @@
 /* font.css - Custom @font-face declarations only */
+/* [ font-family: <family-name>;
+] || [ src: <src>;
+] || [ unicode-range: <unicode-range>;
+] || [ font-variant: <font-variant>;
+] || [ font-feature-settings: <font-feature-settings>;
+] || [ font-variation-settings: <font-variation-settings>;
+] || [ font-stretch: <font-stretch>;
+] || [ font-weight: <font-weight>;
+] || [ font-style: <font-style>; */
+
+
+@font-face {
+    font-family: "pacifico-regular";
+    src: url("fonts/pacifico-regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings: 'wght'400, 'wdth'300;
+}
+
+@font-face {
+    font-family: 'MPLUSRounded1c-Thin';
+    src: url('fonts/MPLUSRounded1c-Thin.ttf');
+    font-weight: thin;
+    font-style: normal;
+    font-variation-settings: 'wght'200, 'wdth'100;
+}
+
+@font-face {
+    font-family: 'MPLUSRounded1c-Light';
+    src: url('fonts/MPLUSRounded1c-Light.ttf');
+    font-weight: lighter;
+    font-style: normal;
+    font-variation-settings: 'wght'300, 'wdth'200;
+}
+
+@font-face {
+    font-family: 'MPLUSRounded1c-Regular';
+    src: url('fonts/MPLUSRounded1c-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings: 'wght'400, 'wdth'300;
+}
+
+@font-face {
+    font-family: 'MPLUSRounded1c-Medium';
+    src: url('fonts/MPLUSRounded1c-Medium.ttf');
+    font-weight: medium;
+    font-style: normal;
+    font-variation-settings: 'wght'500, 'wdth'400;
+}
+
+@font-face {
+    font-family: 'MPLUSRounded1c-Bold';
+    src: url('fonts/MPLUSRounded1c-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings: 'wght'600, 'wdth'500;
+}
+
+@font-face {
+    font-family: 'MPLUSRounded1c-Black';
+    src: url('fonts/MPLUSRounded1c-Black.ttf');
+    font-weight: bolder;
+    font-style: normal;
+    font-variation-settings: 'wght'700, 'wdth'600;
+}
+
+.hello {
+    color: cyan;
+    background-color: red;
+}
